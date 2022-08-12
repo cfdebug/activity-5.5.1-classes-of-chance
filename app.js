@@ -1,5 +1,17 @@
 class Casino {
-    // Write code here
+    constructor(name, fake){
+        this.name = name;
+        this.timesPlayed = 0;
+        this.isFakeCoin = fake;
+    }
+    playGame(betAmount){
+        if(Math.random() <= 0.5 | this.isFakeCoin){
+            console.log(this.name + " Wins!");
+        }else{
+            console.log("Player Wins "+`${betAmount * (this.timesPlayed + 1)}`+" dollars!");
+        }
+        this.timesPlayed++
+    }
 };
 
 // TESTS
